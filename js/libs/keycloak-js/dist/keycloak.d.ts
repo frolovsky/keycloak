@@ -37,6 +37,11 @@ export interface KeycloakConfig {
 	 * Client identifier, example: 'myapp'
 	 */
 	clientId: string;
+	/**
+	 * Client secret value from credentials
+	 * Required if "Client authentication" & "Authorization" enabled in Capability config
+	 */
+	clientSecret?: string;
 }
 
 export interface Acr {
@@ -469,6 +474,11 @@ declare class Keycloak {
 	* @private Undocumented.
 	*/
 	clientId?: string;
+
+	/**
+	* @private Undocumented.
+	*/
+	clientSecret?: string;
 
 	/**
 	* @private Undocumented.

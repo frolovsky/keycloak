@@ -772,6 +772,7 @@ function Keycloak (config) {
             req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
             params += '&client_id=' + encodeURIComponent(kc.clientId);
+            params += '&client_secret=' + encodeURIComponent(kc.clientSecret);
             params += '&redirect_uri=' + oauth.redirectUri;
 
             if (oauth.pkceCodeVerifier) {
@@ -923,6 +924,7 @@ function Keycloak (config) {
             }
 
             kc.clientId = config.clientId;
+            kc.clientSecret = config.clientSecret;
 
             var oidcProvider = config['oidcProvider'];
             if (!oidcProvider) {
